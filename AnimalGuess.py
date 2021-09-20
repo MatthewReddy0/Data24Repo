@@ -1,12 +1,21 @@
 from SubAnimals import *
+import random
 
-animal = think_of_animal()
+animal_list = (Dolphin, Human, Platypus, Bat, PolarBear, FieldMouse, Deer,
+           Kiwi, Ostrich, Eagle, Hummingbird, Swan, Toucan,
+           CornSnake, GilaMonster, Crocodile, Gecko, Anaconda, DrylandTortoise,
+           RedEyedTreeFrog, GoliathFrog, GiantSalamander)
+the_chosen_one = random.choice(animal_list)
+animal = the_chosen_one()
+new_animal = str(the_chosen_one)
+new_animal = new_animal[:-2]
+new_animal = new_animal.split('.')[1]
+# print(animal)
 
-list_of_animals = ['hyena', 'field mouse', 'dolphin', 'human', 'cheetah', 'elephant', 'bat', 'squirrel', 'whale',
-                   'hedgehog', 'rabbit', 'fox', 'deer', 'seal', 'polar bear', 'platypus',
-                   'kiwi', 'ostrich', 'eagle', 'hummingbird', 'swans', 'toucans',
-                   'corn Snake', 'komodo dragon', 'crocodile', 'gecko', 'chameleon', 'anaconda', 'dryland tortoise',
-                   'red-eyed tree frog', 'bullfrog', 'giant salamander']
+list_of_animals = ('Dolphin', 'Human', 'Platypus', 'Bat', 'PolarBear', 'FieldMouse', 'Deer',
+                   'Kiwi', 'Ostrich', 'Eagle', 'Hummingbird', 'Swan', 'Toucan',
+                   'CornSnake', 'GilaMonster', 'Crocodile', 'Gecko', 'Anaconda', 'DrylandTortoise',
+                   'RedEyedTreeFrog', 'GoliathFrog', 'GiantSalamander')
 
 game_state = True
 lives = 3
@@ -24,7 +33,7 @@ while game_state:
           '5. How many legs does it have? \n'
           '6. Can it fly? \n')
     playerinput = input()
-    if playerinput.lower() == animal:
+    if playerinput.lower() == new_animal:
         you = 'won!'
         game_state = False
     elif playerinput == '1':
